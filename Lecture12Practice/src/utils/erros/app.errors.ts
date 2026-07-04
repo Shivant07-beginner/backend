@@ -4,6 +4,14 @@ export interface AppError extends Error{
     statusCode : number;
 }
 
- export interface InternalServerError extends AppError {
-    name : 'InternalServerError';
-}
+ export class InternalServerError implements AppError {
+   
+    statusCode: number;
+     message: string;
+     name: string;
+   constructor(message : string){
+    this.statusCode = 500;
+    this.message = message;
+    this.name = "inneternaleservererror";
+   }
+} 
