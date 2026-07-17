@@ -17,8 +17,6 @@ app.use(express.json());
 
  app.use(genricErrorHandling);
  
- 
-
 app.listen(ServerConfig.PORT, () => {
   console.log(`Server is running on ${ServerConfig.PORT}`);
   logger.info("Press ctrlV to stop",{data : "somethind is "});
