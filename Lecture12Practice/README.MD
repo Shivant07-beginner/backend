@@ -329,3 +329,30 @@ Testing
         │
         ▼
 Deployment
+
+## sequalize orm use
+
+## first create .sequalizerc file out of the src folder
+
+const path = require("path");
+
+module.exports = {
+  config: path.resolve("./src/config/config.js"),
+  "models-path": path.resolve("./src/db/models"),
+  "seeders-path": path.resolve("./src/db/seeders"),
+  "migrations-path": path.resolve("./src/db/migrations")
+};
+
+
+
+
+`
+## create it in src folder cd/src
+ npx sequelize-cli migration:generate --name create-hotel-table
+
+`
+ In migration folder write the table creation schemas
+`
+## out of the src folder for creation of tables
+npx sequelize-cli db:migrate
+`

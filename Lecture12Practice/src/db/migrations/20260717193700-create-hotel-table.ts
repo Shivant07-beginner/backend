@@ -1,6 +1,6 @@
  
 // import { create } from "node:domain";
-// import { QueryInterface } from "sequelize"
+import { QueryInterface } from "sequelize"
  
 
 // module.exports = {
@@ -40,7 +40,7 @@
  
 
 module.exports = {
-  async up(queryInterface) {
+  async up(queryInterface: { sequelize: { query: (arg0: string) => any; }; }) {
     await queryInterface.sequelize.query(`
       CREATE TABLE IF NOT EXISTS hotels (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -54,7 +54,7 @@ module.exports = {
     `);
   },
 
-  async down(queryInterface) {
+  async down(queryInterface: { sequelize: { query: (arg0: string) => any; }; }) {
     await queryInterface.sequelize.query(`
       DROP TABLE IF EXISTS hotels;
     `);
